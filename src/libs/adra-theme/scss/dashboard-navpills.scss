@@ -1,0 +1,119 @@
+@import '../variables.scss';
+
+.nav-pills {
+	.nav-item {
+		& + .nav-link {
+			margin-left: 0;
+		}
+		.nav-link {
+			border: 1px solid $gray;
+			border-radius: 0;
+			color: $gray;
+			font-weight: 700;
+			margin-left: -1px;
+			padding: 10px 25px;
+			&.active {
+				background-color: $gray;
+				color: white;
+			}
+		}
+		&:first-child {
+			.nav-link {
+				border-radius: 30px 0 0 30px !important;
+				margin: 0;
+			}
+		}
+		&:last-child {
+			.nav-link {
+				border-radius: 0 30px 30px 0 !important;
+			}
+		}
+	}
+}
+
+.nav-pills .nav-item.active .nav-link,
+.nav-pills .nav-item.active .nav-link:focus,
+.nav-pills .nav-item.active .nav-link:hover {
+	background-color: $gray;
+	color: white;
+}
+
+.nav-pills-primary .nav-item .nav-link {
+	border: 1px solid $primary-light;
+	color: $primary-light;
+	&.active {
+		border: 1px solid $primary;
+		background: $primary;
+		color: white;
+	}
+}
+
+.nav-pills-danger .nav-item .nav-link {
+	border: 1px solid $danger;
+	color: $danger;
+	&.active {
+		border: 1px solid $danger-dark;
+		background: $danger-dark;
+		color: white;
+	}
+}
+
+.nav-pills-info .nav-item .nav-link {
+	border: 1px solid $info;
+	color: $info;
+	&.active {
+		border: 1px solid $info-dark;
+		background: $info-dark;
+		color: white;
+	}
+}
+
+.nav-pills-success .nav-item .nav-link {
+	border: 1px solid $success;
+	color: $success;
+	&.active {
+		border: 1px solid $success-dark;
+		background: $success-dark;
+		color: white;
+	}
+}
+
+.nav-pills-warning .nav-item .nav-link {
+	border: 1px solid $warning;
+	color: $warning;
+	&.active {
+		border: 1px solid $warning-dark;
+		background: $warning-dark;
+		color: white;
+	}
+}
+
+.nav-pills-default .nav-item.show .nav-link,
+.nav-pills-default .nav-link.active {
+	background-color: $gray !important;
+}
+
+.nav-pills-primary .nav-item.show .nav-link,
+.nav-pills-primary .nav-link.active {
+	background-color: $primary-light !important;
+}
+
+.nav-pills-info .nav-item.show .nav-link,
+.nav-pills-info .nav-link.active {
+	background-color: $info !important;
+}
+
+.nav-pills-warning .nav-item.show .nav-link,
+.nav-pills-warning .nav-link.active {
+	background-color: $warning !important;
+}
+
+.nav-pills-success .nav-item.show .nav-link,
+.nav-pills-success .nav-link.active {
+	background-color: $success !important;
+}
+
+.nav-pills-danger .nav-item.show .nav-link,
+.nav-pills-danger .nav-link.active {
+	background-color: $danger !important;
+}

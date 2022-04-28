@@ -1,0 +1,10 @@
+<a class="nav-link" [routerLink]="compareRoute() ? sideNavItem.deUri: null" (click)="expanded = !expanded" [ngClass]="{active: isActive, collapsed: !expanded}">
+    <i *ngIf="compareIcon()" class="nc-icon {{ sideNavItem.icono }}"></i>
+    <span *ngIf="!sideNavItem.subMenu && !compareIcon()" class="sidebar-mini-icon">{{ sideNavItem.icono }}</span>
+    <p *ngIf="!isSubMenu">{{sideNavItem.menu}}</p>
+    <span *ngIf="isSubMenu" class="sidebar-normal">{{sideNavItem.menu}}</span>
+    <div class="sb-sidenav-collapse-arrow"><fa-icon class="ml-auto" *ngIf="sideNavItem.subMenu" [icon]="['fas', 'angle-down']"></fa-icon></div>
+</a>
+<nav class="sb-sidenav-menu-nested nav" *ngIf="sideNavItem.subMenu &amp;&amp; expanded">
+    <sb-side-nav-item class="submenu" *ngFor="let submenuItem of sideNavItem.subMenu" [sideNavItem]="submenuItem" [isSubMenu]="true"></sb-side-nav-item>
+</nav>

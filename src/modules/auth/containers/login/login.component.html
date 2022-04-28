@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <!-- The image half -->
+        <div class="col-md-6 d-none d-md-flex bg-image"></div>
+        <!-- The content half -->
+        <div class="col-md-6 bg-light">
+            <div class="login d-flex align-items-center py-5">
+                <!-- Demo content-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-7 mx-auto justify-content-center">
+                            <!-- <div class="container ">
+                                <img src="../../../../assets/img/logo/logo-horizontal-default.png" alt="Img Adra">
+                            </div> -->
+                            <p class="text-center" ><img src="../../../../assets/img/logo/logo-horizontal-default.png" width="277" height="73" alt="Img Adra"></p>
+                            <h4 class="text-primary font-weight-bold text-center mt-3">LOGISTICA</h4>
+                            <!-- <h5 class="display-4">Logistica</h5> -->
+                            <!-- <p class="text-muted mb-4">Create a login split page using Bootstrap 4.</p> -->
+                            <form [formGroup]="loginForm">
+                                <div class="form-group mb-3">
+                                    <input name="username" placeholder="Usuario" formControlName="username" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <input name="password" type="password" placeholder="Contraseña" formControlName="password"  class="form-control rounded-pill border-0 shadow-sm px-4 text-primary">
+                                </div>
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Recordar usuario</label>
+                                </div>
+                                <button (click)="onLoggedin()" [disabled]="loginForm.invalid" type="submit" class="btn btn-adra btn-block text-uppercase mb-2 rounded-pill shadow-sm">Iniciar Sesion</button>
+                                <div class="text-center d-flex justify-content-between mt-4"><p>Olvidó su contraseña? clic <a href="#" class="font-italic text-muted"> 
+                                        <u>Aquí</u></a></p></div>
+                            </form>
+                        </div>
+                    </div>
+                </div><!-- End -->
+            </div>
+        </div><!-- End -->
+    </div>
+</div>

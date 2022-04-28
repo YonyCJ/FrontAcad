@@ -1,0 +1,132 @@
+@import '../variables.scss';
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+	vertical-align: middle;
+	& > input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		font-size: 23px;
+		cursor: pointer;
+		filter: alpha(opacity=0);
+		opacity: 0;
+		direction: ltr;
+	}
+}
+
+.fileinput {
+	display: inline-block;
+	margin-bottom: 9px;
+	.form-control {
+		display: inline-block;
+		padding-top: 7px;
+		padding-bottom: 5px;
+		margin-bottom: 0;
+		vertical-align: middle;
+		cursor: text;
+	}
+	.thumbnail {
+		display: inline-block;
+		margin-bottom: 10px;
+		overflow: hidden;
+		text-align: center;
+		vertical-align: middle;
+		max-width: 250px;
+		box-shadow: 0 2px 2px $shadow;
+		&.img-circle {
+			border-radius: 50%;
+			max-width: 100px;
+		}
+		& > img {
+			max-height: 100%;
+		}
+	}
+	.btn {
+		vertical-align: middle;
+	}
+	&.input-group {
+		display: table;
+		& > * {
+			position: relative;
+			z-index: 2;
+		}
+		& > .btn-file {
+			z-index: 1;
+		}
+	}
+}
+
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+	display: none;
+}
+
+.fileinput-inline .fileinput-controls {
+	display: inline;
+}
+
+.fileinput-filename {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.fileinput-new.input-group .btn-file,
+.fileinput-new .input-group .btn-file {
+	border-radius: 0 4px 4px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-sm,
+.fileinput-new .input-group .btn-file.btn-sm,
+.fileinput-new.input-group .btn-file.btn-xs,
+.fileinput-new .input-group .btn-file.btn-xs {
+	border-radius: 0 3px 3px 0;
+}
+
+.fileinput-new.input-group .btn-file.btn-lg,
+.fileinput-new .input-group .btn-file.btn-lg {
+	border-radius: 0 6px 6px 0;
+}
+
+.form-group {
+	&.has-warning .fileinput {
+		.fileinput-preview {
+			color: $warning;
+		}
+		.thumbnail {
+			border-color: $warning;
+		}
+	}
+	&.has-error .fileinput {
+		.fileinput-preview {
+			color: $danger;
+		}
+		.thumbnail {
+			border-color: $danger;
+		}
+	}
+	&.has-success .fileinput {
+		.fileinput-preview {
+			color: $success;
+		}
+		.thumbnail {
+			border-color: $success;
+		}
+	}
+	input[type=file] {
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+	}
+}

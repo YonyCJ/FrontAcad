@@ -1,0 +1,491 @@
+@import '../variables.scss';
+
+::-moz-placeholder {
+	color: $form-focus;
+}
+
+:-ms-input-placeholder {
+	color: $form-focus;
+}
+
+::-webkit-input-placeholder {
+	color: $form-focus;
+}
+
+input[type=date i] {
+	height: 40px;
+}
+
+.form-control {
+	background-color: white;
+	border: 1px solid $border;
+	border-radius: 4px;
+	color: $gray;
+	line-height: normal;
+	min-height: 40px;
+	font-size: 14px;
+	transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
+	box-shadow: none;
+	&.form-control-sm {
+		min-height: calc(1.5em + .5rem + 2px);
+		height: calc(1.5em + .5rem + 2px);
+		padding: .25rem .5rem !important;
+		font-size: .875rem;
+		line-height: 1.5;
+	}
+	&:focus {
+		border: 1px solid $form-focus;
+		box-shadow: none;
+		outline: 0!important;
+		color: $gray;
+	}
+	& + .form-control-feedback {
+		border-radius: 6px;
+		font-size: 14px;
+		margin-top: -7px;
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		vertical-align: middle;
+	}
+	.fileinput-filename {
+		vertical-align: bottom;
+	}
+}
+
+textarea.form-control.form-control-sm {
+	height: unset;
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+	display: none;
+	-webkit-appearance: none;
+}
+
+.form-control:focus+.input-group-append .input-group-text,
+.form-control:focus+.input-group-prepend .input-group-text,
+.form-control:focus~.input-group-append .input-group-text,
+.form-control:focus~.input-group-prepend .input-group-text {
+	border: 1px solid $form-focus;
+	background-color: transparent;
+}
+
+.has-error .form-control,
+.has-error .form-control:focus,
+.has-success .form-control,
+.has-success .form-control:focus {
+	box-shadow: none;
+}
+
+.has-success .form-control,
+.has-success .ng-select .ng-select-container {
+	border: 1px solid $border;
+	color: $gray;
+}
+
+.open .form-control {
+	border-radius: 6px 6px 0 0;
+	border-bottom-color: transparent;
+}
+
+.input-group-text {
+	font-size: 14px;
+}
+
+.form-control+.input-group-append .input-group-text,
+.form-control+.input-group-prepend .input-group-text {
+	background-color: white;
+}
+
+.form-group.no-border.form-control-lg .input-group-append .input-group-text,
+.input-group.no-border.form-control-lg .input-group-append .input-group-text {
+	padding: 15px 0 15px 11px;
+}
+
+.form-group.no-border.form-control-lg .form-control,
+.input-group.no-border.form-control-lg .form-control {
+	padding: 15px 11px;
+}
+
+.form-group.no-border.form-control-lg .form-control+.input-group-append .input-group-text,
+.form-group.no-border.form-control-lg .form-control+.input-group-prepend .input-group-text,
+.input-group.no-border.form-control-lg .form-control+.input-group-append .input-group-text,
+.input-group.no-border.form-control-lg .form-control+.input-group-prepend .input-group-text {
+	padding: 15px 11px 15px 0;
+}
+
+.form-group.form-control-lg .form-control,
+.input-group.form-control-lg .form-control {
+	padding: 14px 10px;
+}
+
+.form-group.form-control-lg .form-control+.input-group-append .input-group-text,
+.form-group.form-control-lg .form-control+.input-group-prepend .input-group-text,
+.input-group.form-control-lg .form-control+.input-group-append .input-group-text,
+.input-group.form-control-lg .form-control+.input-group-prepend .input-group-text {
+	padding: 14px 10px 14px 0;
+}
+
+.form-group.form-control-lg .input-group-append .input-group-text,
+.form-group.form-control-lg .input-group-prepend .input-group-text,
+.input-group.form-control-lg .input-group-append .input-group-text,
+.input-group.form-control-lg .input-group-prepend .input-group-text {
+	padding: 14px 0 15px 10px;
+}
+
+.form-group.form-control-lg .input-group-append .input-group-text+.form-control,
+.form-group.form-control-lg .input-group-prepend .input-group-text+.form-control,
+.input-group.form-control-lg .input-group-append .input-group-text+.form-control,
+.input-group.form-control-lg .input-group-prepend .input-group-text+.form-control {
+	padding: 15px 10px 15px 8px;
+}
+
+.form-group.no-border .form-control,
+.input-group.no-border .form-control {
+	padding: 11px;
+}
+
+.form-group.no-border .form-control+.input-group-append .input-group-text,
+.form-group.no-border .form-control+.input-group-prepend .input-group-text,
+.input-group.no-border .form-control+.input-group-append .input-group-text,
+.input-group.no-border .form-control+.input-group-prepend .input-group-text {
+	padding: 11px 11px 11px 0;
+}
+
+.form-group.no-border .input-group-append .input-group-text,
+.form-group.no-border .input-group-prepend .input-group-text,
+.input-group.no-border .input-group-append .input-group-text,
+.input-group.no-border .input-group-prepend .input-group-text {
+	padding: 11px 0 11px 11px;
+	background-color: $bg-no-border;
+	border: none;
+}
+
+.form-group .form-control,
+.input-group .form-control {
+	padding: 10px;
+}
+
+.form-group-radio {
+	padding: 10px 0 !important;
+	border: none;
+}
+
+.form-group .form-control+.input-group-append .input-group-text,
+.input-group .form-control+.input-group-append .input-group-text {
+	padding: 10px 10px 10px 0;
+}
+
+.form-group .input-group-append .input-group-text+.form-control,
+.form-group .input-group-append .input-group-text~.form-control,
+.form-group .input-group-prepend .input-group-text+.form-control,
+.form-group .input-group-prepend .input-group-text~.form-control,
+.input-group .input-group-append .input-group-text+.form-control,
+.input-group .input-group-append .input-group-text~.form-control,
+.input-group .input-group-prepend .input-group-text+.form-control,
+.input-group .input-group-prepend .input-group-text~.form-control {
+	padding: 10px 11px 11px 8px;
+}
+
+.input-group.has-success .input-group-append .input-group-text,
+.input-group.has-success .input-group-prepend .input-group-text {
+	border: 1px solid $border-dark;
+	color: $gray;
+	background-color: white;
+	border-right: none;
+}
+
+.form-group.no-border .form-control,
+.form-group.no-border .form-control+.input-group-append .input-group-text,
+.form-group.no-border .form-control+.input-group-prepend .input-group-text,
+.input-group.no-border .form-control,
+.input-group.no-border .form-control+.input-group-append .input-group-text,
+.input-group.no-border .form-control+.input-group-prepend .input-group-text {
+	background-color: $bg-no-border;
+	border: medium none;
+}
+
+.form-group.no-border .form-control+.input-group-append .input-group-text:active,
+.form-group.no-border .form-control+.input-group-append .input-group-text:focus,
+.form-group.no-border .form-control+.input-group-prepend .input-group-text:active,
+.form-group.no-border .form-control+.input-group-prepend .input-group-text:focus,
+.form-group.no-border .form-control:active,
+.form-group.no-border .form-control:focus,
+.input-group.no-border .form-control+.input-group-append .input-group-text:active,
+.input-group.no-border .form-control+.input-group-append .input-group-text:focus,
+.input-group.no-border .form-control+.input-group-prepend .input-group-text:active,
+.input-group.no-border .form-control+.input-group-prepend .input-group-text:focus,
+.input-group.no-border .form-control:active,
+.input-group.no-border .form-control:focus {
+	border: medium none;
+	background-color: $bg-no-border-dark;
+}
+
+.form-group.no-border .form-control:focus+.input-group-append .input-group-text,
+.form-group.no-border .form-control:focus+.input-group-prepend .input-group-text,
+.input-group.no-border .form-control:focus+.input-group-append .input-group-text,
+.input-group.no-border .form-control:focus+.input-group-prepend .input-group-text {
+	background-color: $bg-no-border-dark;
+}
+
+.has-error .control-label,
+.has-error .form-control-feedback {
+	color: $danger;
+}
+
+.has-success .control-label,
+.has-success .form-control-feedback {
+	color: $success;
+}
+
+.input-group {
+	&.has-danger {
+		.input-group-prepend {
+			border-radius: 4px;
+			.input-group-text {
+				border: 1px solid $danger;
+				border-right: none;
+			}
+		}
+		.error {
+			display: block;
+			width: 100%;
+			color: $danger;
+			margin-top: 3px;
+		}
+	}
+	&.has-success {
+		.input-group-prepend {
+			border-radius: 4px;
+			.input-group-text {
+				border-right: none;
+			}
+		}
+	}
+	.input-group-btn {
+		padding: 0 12px;
+	}
+}
+
+.input-group-focus .input-group-append .input-group-text,
+.input-group-focus .input-group-prepend .input-group-text {
+	background-color: white;
+	border-color: $form-focus;
+}
+
+.input-group-focus.no-border .input-group-append .input-group-text,
+.input-group-focus.no-border .input-group-prepend .input-group-text {
+	background-color: $bg-no-border-dark;
+}
+
+.input-group-focus.has-danger .input-group-append .input-group-text,
+.input-group-focus.has-danger .input-group-prepend .input-group-text {
+	background-color: $danger-light;
+}
+
+.input-group-focus.has-success .input-group-append .input-group-text,
+.input-group-focus.has-success .input-group-prepend .input-group-text {
+	background-color: $success-ligth;
+	border: 1px solid $success;
+	border-right: none;
+}
+
+.input-group-append .input-group-text,
+.input-group-prepend .input-group-text {
+	background-color: transparent;
+	border: 1px solid $border-light;
+	color: $gray;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	transition: color .3s ease-in-out, border-color .3s ease-in-out, background-color .3s ease-in-out;
+}
+
+.input-group-append .input-group-text i,
+.input-group-prepend .input-group-text i {
+	opacity: .5;
+	width: 17px;
+}
+
+.input-group-append .input-group-text+.form-control,
+.input-group-append .input-group-text~.form-control,
+.input-group-prepend .input-group-text+.form-control,
+.input-group-prepend .input-group-text~.form-control {
+	padding: -.5rem .7rem;
+	padding-left: 18px;
+}
+
+.input-group-append,
+.input-group-prepend {
+	margin: 0;
+}
+
+.input-group-append .input-group-text {
+	border-left: none !important;
+}
+
+.input-group-prepend .input-group-text {
+	border-right: none;
+}
+
+.form-group > p {
+	margin-bottom: 0;
+}
+
+.form-group,
+.input-group {
+	margin-bottom: 10px;
+}
+
+.form-group .form-control-static,
+.input-group .form-control-static {
+	margin-top: 9px;
+}
+
+.form-group.has-danger .error,
+.input-group.has-danger .error {
+	color: $danger;
+}
+
+.input-group[disabled] .input-group-append .input-group-text,
+.input-group[disabled] .input-group-prepend .input-group-text {
+	background-color: $border-light;
+}
+
+.input-group-btn:not(:first-child):not(:last-child),
+.input-group .form-control:not(:first-child):not(:last-child) {
+	border-radius: 4px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left: 0 none;
+}
+
+.input-group-btn:first-child>.dropdown-toggle,
+.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle),
+.input-group .form-control:first-child {
+	border-right: 0 none !important;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+	background-color: $gray-light;
+	color: $gray;
+}
+
+.input-group-btn {
+	.btn {
+		border-width: 1px;
+		padding: 11px .7rem;
+	}
+	.btn-default:not(.btn-fill) {
+		border-color: $border;
+	}
+	&:last-child > .btn {
+		margin-left: 0;
+	}
+}
+
+textarea.form-control {
+	max-width: 100%;
+	padding: 10px 10px 0 0;
+	border: none;
+	border: 1px solid $border-light;
+	border-radius: 4px;
+	line-height: 2;
+}
+
+.form.form-newsletter .form-group {
+	float: left;
+	width: 78%;
+	margin-right: 2%;
+	margin-top: 9px;
+}
+
+.form-text {
+	font-size: .8571em;
+}
+
+.form-control-lg {
+	padding: 0;
+	font-size: inherit;
+	line-height: 0;
+	border-radius: 0;
+}
+
+.form-horizontal .col-form-label,
+.form-horizontal .label-on-right {
+	padding: 10px 5px 0 15px;
+	text-align: right;
+	max-width: 180px;
+}
+
+.form-horizontal {
+	.checkbox-radios {
+		margin-bottom: 15px;
+		.form-check:first-child {
+			margin-top: 8px;
+		}
+	}
+	.label-on-right {
+		text-align: left;
+		padding: 10px 15px 0 5px;
+	}
+	.form-check-inline {
+		margin-top: 6px;
+	}
+}
+
+.custom-file-input:focus~.custom-file-label {
+	border: 1px solid #9A9A9A;
+	box-shadow: none;
+	outline: 0 !important;
+	color: #66615B;
+}
+
+.custom-file-label::after {
+	content: "Buscar";
+	background-color: $background;
+}
+
+.has-success .form-control:focus,
+.has-success .ng-select.ng-select-focused .ng-select-container {
+	border: 1px solid $success-dark;
+	color: $success-dark;
+}
+
+.has-danger .form-control,
+.has-danger .input-group-text,
+.has-danger .ng-select .ng-select-container {
+	border: 1px solid $danger;
+	color: $danger;
+}
+
+.has-danger .form-control:focus,
+.has-danger .ng-select.ng-select-focused .ng-select-container {
+	border: 1px solid $danger;
+	color: $danger;
+}
+
+.has-danger .input-group-append .input-group-text,
+.has-danger .input-group-prepend .input-group-text {
+	color: $danger;
+	border: 1px solid $danger;
+}
+
+.has-success.input-group-focus .input-group-append .input-group-text,
+.has-success.input-group-focus .input-group-prepend .input-group-text {
+	color: $success-dark;
+}
+
+.has-danger .form-control:focus+.input-group-append .input-group-text,
+.has-danger .form-control:focus+.input-group-prepend .input-group-text {
+	color: $danger;
+	border: 1px solid $danger;
+}
+
+.has-success .form-control:focus+.input-group-append .input-group-text,
+.has-success .form-control:focus+.input-group-prepend .input-group-text {
+	color: $success-dark;
+	border: 1px solid $success-dark;
+}
