@@ -29,7 +29,6 @@ export class AuthUtilService {
         const uint16Array = new Uint16Array(inflate(binData));
         const dataArray: any[] = uint16Array.toString().split(',');
         const data = String.fromCharCode.apply(null, dataArray);
-        console.log(JSON.parse(data));
         return JSON.parse(data)
     }
 

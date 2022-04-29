@@ -12,9 +12,8 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
     loginForm = new FormGroup({
-        username: new FormControl('', [Validators.required]),
+        email: new FormControl('', [Validators.required]),
         password: new FormControl('', [Validators.required]),
-        grant_type: new FormControl('password'),
     });
 
     constructor(private authService: AuthService,
@@ -23,7 +22,6 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.authService.getAccessToken());
         if (this.authService.getAccessToken()) {
             this.redirectInto();
         }
@@ -31,7 +29,6 @@ export class LoginComponent implements OnInit {
 
     onLoggedin(): void {
         if (this.loginForm.valid) {
-            console.log(this.loginForm.value);
             this.authService.authenticate(this.loginForm.value).subscribe(response => {
                 if (response && this.authService.getAccessToken()) {
                     this.redirectInto();

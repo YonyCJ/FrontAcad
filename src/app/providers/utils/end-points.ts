@@ -1,6 +1,6 @@
 export const END_POINTS = {
     oauth: {
-        login: 'security/oauth/token', // logeo
+        login: 'login', // logeo
         logout: 'security/oauth/logout',// cerrar session
         find: 'security/oauth/find',// buscar usuario
     },

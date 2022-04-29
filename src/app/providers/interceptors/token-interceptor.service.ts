@@ -1,10 +1,17 @@
 import {Injectable} from '@angular/core';
-import {HttpRequest, HttpEvent, HttpHandler, HttpInterceptor, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
+import {
+    HttpRequest,
+    HttpEvent,
+    HttpHandler,
+    HttpInterceptor,
+    HttpHeaders,
+    HttpErrorResponse
+} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {environment} from '../../../../src/environments/environment';
 import {AuthService} from "@app/providers/services/oauth";
-import { catchError } from 'rxjs/operators';
-import { NotificationService } from '../services/notifications/notification.service';
+import {catchError} from 'rxjs/operators';
+import {NotificationService} from '../services/notifications/notification.service';
 
 @Injectable()
 export class TokenInterceptorService implements HttpInterceptor {
@@ -28,13 +35,13 @@ export class TokenInterceptorService implements HttpInterceptor {
         const urlReq = this.setUrl(authorizationReq);
         const handleRequest = next.handle(urlReq);
         return handleRequest.pipe(
-            catchError((error:HttpErrorResponse) =>{
-                if(error.status !== 401){
+            catchError((error: HttpErrorResponse) => {
+                if (error.status !== 401) {
                     if (error.error.message) {
                         this.notificationService.notify(error.status, error.error.message, error.error.type)
                     } else {
                         this.notificationService.notify(error.status, error.error.error)
-                      }
+                    }
                 }
                 return throwError(error)
             }));
@@ -44,13 +51,12 @@ export class TokenInterceptorService implements HttpInterceptor {
         const authorization = this.token;
         if (this.token) {
             this.header = req.headers
-                .set('x-api-key', 'NTIPO')
-                .set('Authorization', 'Bearer ' + authorization);
+                .set('Authorization', 'Bearer ' + authorization)
+                .set('Content-Type', 'application/json');
+
         } else {
             this.header = req.headers
-                .set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('Authorization', 'Basic ' + btoa('sigemi:Gf^1jNjl{G%WKGZ]T')
-                );
+                .set('Content-Type', 'application/json');
 
         }
         const authorizationReq = req.clone({headers: this.header});
