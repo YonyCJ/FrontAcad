@@ -1,0 +1,34 @@
+export interface Matricula {
+    id?: number;
+    nombres?: string;
+    apellidos?: string;
+    sexo?: boolean;
+    grado_id?: number;
+    correo?: string;
+    dni?: number;
+    fechanac?: string;
+    lugarnac?: string;
+    direccion?: string;
+    religion?: string;
+    discapacidad?: string;
+    nivel_id?: string;
+    nombrespadre?: string;
+    apellidospadre?: string;
+    dnipadre?: number;
+    ocupacionpadre?: string;
+    gradoinstrucionpadre?: string;
+    direccionpadre?: string;
+    correopadre?: string;
+    celularpadre?: number;
+    religionpadre?: string;
+    nombresmadre?: string;
+    apellidosmadre?: string;
+    dnimadre?: number;
+    ocupacionmadre?: string;
+    gradoinstrucionmadre?: string;
+    direccionmadre?: string;
+    correomadre?: string;
+    celularmadre?: number;
+    religionmadre?: string;
+    estado?: boolean;
+}
